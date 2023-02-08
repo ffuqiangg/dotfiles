@@ -10,6 +10,7 @@ set number                        " show line numbers
 set nowrap                        " line exceed screen don't wrap
 set sidescroll=1                  " line exceed screen cursor smooth scrolling
 set cursorline                    " highlight cursorline
+set laststatus=2                  " always show statusline
 
 set novisualbell                  " turn off visualbell
 set noerrorbells                  " turn off errorbell
@@ -28,10 +29,6 @@ set shiftround                    " indent not to multiple of 'shiftwidth'
 set shiftwidth=4                  " number of spaces to use for (auto)indent
 
 if &term == "xterm"
-    " different cursor in insert mode
-    " let &t_SI = "\<Esc>[6 q"
-    " let &t_SR = "\<Esc>[3 q"
-    " let &t_EI = "\<Esc>[2 q"
     if has("terminfo")
         set t_Co=8
         set t_Sf=^[[3%p1%dm
@@ -42,24 +39,22 @@ if &term == "xterm"
         set t_Sb=^[[4%dm
     endif
 endif
-" different cursor in insert mode for tmux
-" if exists('$TMUX')
-"     let &t_SI .= "\e[6 q"
-"     let &t_SR .= "\e[3 q"
-" 	let &t_EI .= "\e[2 q"
-" endif
-
 syntax on                         " turn syntax highlighting on by default
 
 " Specify file config
 filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
+" Statusline configure
+set statusline=%{&ff}:%<%f\ %h%m%r%w%=%-13(%l,%c%V%)\ %4(%p%%%)
+
 " Theme
-set termguicolors
+set t_Co=256
 colorscheme yowish
-hi LineNr guifg=#949494
-hi SpecialKey guifg=#6e6e6e
-hi TabLineFill guibg=#393939
-hi TabLineSel guibg=#bebebe guifg=#393939 gui=bold
-hi Comment cterm=italic gui=italic
+hi CursorLine ctermbg=none
+hi StatusLine cterm=bold
+hi LineNr ctermfg=246
+hi Comment cterm=italic
+hi SpecialKey ctermfg=242
+hi TabLineFill ctermbg=236
+hi TabLineSel ctermfg=236 ctermbg=249
