@@ -51,6 +51,7 @@ set statusline=%{&ff}:%<%f\ %h%m%r%w%=%-13(%l,%c%V%)\ %4(%p%%%)
 " Theme
 set t_Co=256
 colorscheme yowish
+hi Normal ctermbg=none
 hi CursorLine ctermbg=none
 hi StatusLine cterm=bold ctermbg=66
 hi LineNr ctermfg=246
