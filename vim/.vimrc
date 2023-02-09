@@ -55,19 +55,8 @@ hi Comment cterm=italic
 hi SpecialKey ctermfg=242
 hi TabLineFill ctermbg=236
 hi TabLineSel ctermfg=236 ctermbg=249
+hi StatusLine ctermbg=236 ctermfg=251
+hi StatusLineNC ctermbg=239 ctermfg=243
 
 " Statusline configure
-set statusline=%1*\ 
-set statusline+=%2*\ ●
-set statusline+=%3*\ %h%m%r%w
-set statusline+=%4*\ %<%f\ ≡\ %l:%v\ %P
-set statusline+=%5*%=
-set statusline+=%6*%{&ff}\ %{&fenc}
-set statusline+=%7*\ %y
-hi User1 ctermbg=67
-hi User2 ctermbg=235
-hi User3 ctermbg=235 ctermfg=215
-hi User4 ctermbg=235
-hi User5 ctermbg=235
-hi User6 ctermbg=235
-hi User7 ctermbg=235 ctermfg=203
+set statusline=▉\ %h%m%r%w%<%f\ ≡\ %l:%v\ %P%=%{&fenc}\ %{&ff}\ %y
