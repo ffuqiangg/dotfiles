@@ -53,7 +53,7 @@ set t_Co=256
 colorscheme yowish
 hi Normal ctermbg=none
 hi CursorLine ctermbg=none
-hi StatusLine term=bold ctermbg=66
+hi StatusLine cterm=bold ctermbg=66
 hi LineNr ctermfg=246
 hi Comment cterm=italic
 hi SpecialKey ctermfg=242
