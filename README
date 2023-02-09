@@ -1,0 +1,11 @@
+How to use:
+__________
+
+1. sudo apt install stow (ubunut)
+2. git clone --depth=1 git@github.com:ffuqiangg/dotfiles.git ~/.dotfiles
+3. cd ~/.dotfiles
+4. stow nvim vim tmux (you want to use)
+   note: If target file already exidts, rm or rename the file first.
+_________
+
+https://github.com/ffuqiangg
