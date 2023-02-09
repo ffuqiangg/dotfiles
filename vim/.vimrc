@@ -48,15 +48,13 @@ autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 " Theme
 set t_Co=256
 colorscheme yowish
-hi Normal ctermbg=none
 hi CursorLine ctermbg=none
 hi LineNr ctermfg=246
 hi Comment cterm=italic
 hi SpecialKey ctermfg=242
 hi TabLineFill ctermbg=236
 hi TabLineSel ctermfg=236 ctermbg=249
-hi StatusLine ctermbg=236 ctermfg=251
-hi StatusLineNC ctermbg=239 ctermfg=243
+hi StatusLine cterm=bold ctermbg=66
 
 " Statusline configure
-set statusline=▉\ %h%m%r%w%<%f\ ≡\ %l:%v\ %P%=%{&fenc}\ %{&ff}\ %y
+set statusline=%{&ff}:%<%f\ %h%m%r%w%=%4(%p%%%)\ %9(%l,%c%V%)\ 
