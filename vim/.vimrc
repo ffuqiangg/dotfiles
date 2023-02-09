@@ -45,17 +45,29 @@ syntax on                         " turn syntax highlighting on by default
 filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
-" Statusline configure
-set statusline=%{&ff}:%<%f\ %h%m%r%w%=%-13(%l,%c%V%)\ %4(%p%%%)
-
 " Theme
 set t_Co=256
 colorscheme yowish
 hi Normal ctermbg=none
 hi CursorLine ctermbg=none
-hi StatusLine cterm=bold ctermbg=66
 hi LineNr ctermfg=246
 hi Comment cterm=italic
 hi SpecialKey ctermfg=242
 hi TabLineFill ctermbg=236
 hi TabLineSel ctermfg=236 ctermbg=249
+
+" Statusline configure
+set statusline=%1*\ 
+set statusline+=%2*\ ●
+set statusline+=%3*\ %h%m%r%w
+set statusline+=%4*\ %<%f\ ≡\ %l:%v\ %P
+set statusline+=%5*%=
+set statusline+=%6*%{&ff}\ %{&fenc}
+set statusline+=%7*\ %y
+hi User1 ctermbg=67
+hi User2 ctermbg=235
+hi User3 ctermbg=235 ctermfg=215
+hi User4 ctermbg=235
+hi User5 ctermbg=235
+hi User6 ctermbg=235
+hi User7 ctermbg=235 ctermfg=203
