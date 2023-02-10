@@ -11,6 +11,7 @@ set nowrap                        " line exceed screen don't wrap
 set sidescroll=1                  " line exceed screen cursor smooth scrolling
 set cursorline                    " highlight cursorline
 set laststatus=2                  " always show statusline
+set scrolloff=5                   " keep 5 lines when scrolling
 
 set novisualbell                  " turn off visualbell
 set noerrorbells                  " turn off errorbell
@@ -46,17 +47,10 @@ filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 " Theme
-" set t_Co=256
 set termguicolors
 set background=dark
 colorscheme onedark
 hi Comment cterm=italic
-" hi CursorLine ctermbg=none
-" hi LineNr ctermfg=246
-" hi SpecialKey ctermfg=242
-" hi TabLineFill ctermbg=236
-" hi TabLineSel ctermfg=236 ctermbg=249
-" hi StatusLine cterm=bold ctermbg=66
 
 " Statusline configure
 set statusline=%{&ff}:%<%f\ %h%m%r%w%=%4(%p%%%)\ %9(%l,%c%V%)\ 
