@@ -53,4 +53,4 @@ colorscheme onedark
 hi Comment cterm=italic
 
 " Statusline configure
-set statusline=%{&ff}:%<%f\ %h%m%r%w%=%4(%p%%%)\ %9(%l,%c%V%)\ 
+set statusline=\ %{&ff}\ \ %<%f\ %h%m%r%w%=%4(%p%%%)\ %9(%l,%c%V%)\ 
