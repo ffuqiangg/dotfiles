@@ -6,6 +6,7 @@ set backspace=indent,eol,start    " make that backspace key work the way it shou
 set textwidth=0                   " don't wrap lines by default
 set ruler                         " show the current row and column
 set number                        " show line numbers
+set wildmenu                      " show list instead of just completing
 
 set nowrap                        " line exceed screen don't wrap
 set sidescroll=1                  " line exceed screen cursor smooth scrolling
