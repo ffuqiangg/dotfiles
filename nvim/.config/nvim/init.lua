@@ -44,6 +44,7 @@ vim.opt.number = true
 
 -- Highlight cursorline
 vim.opt.cursorline = true
+vim.opt.scrolloff = 5
 
 -- Enable break indent
 vim.opt.breakindent = true
