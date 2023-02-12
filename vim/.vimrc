@@ -11,7 +11,7 @@ set splitright                    " put new split window in right
 
 set nowrap                        " line exceed screen don't wrap
 set sidescroll=1                  " line exceed screen cursor smooth scrolling
-set cursorline                    " highlight cursorline
+set cursorline                    " highlight current line
 set laststatus=2                  " always show statusline
 set scrolloff=5                   " keep 5 lines when scrolling
 
