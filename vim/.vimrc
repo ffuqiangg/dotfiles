@@ -14,6 +14,7 @@ set sidescroll=1                  " line exceed screen cursor smooth scrolling
 set cursorline                    " highlight current line
 set laststatus=2                  " always show statusline
 set scrolloff=5                   " keep 5 lines when scrolling
+set noshowmode                    " don't show mode in command line(already show in statusline)
 
 set novisualbell                  " turn off visualbell
 set noerrorbells                  " turn off errorbell
@@ -48,11 +49,33 @@ syntax on                         " turn syntax highlighting on by default
 filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
+" Getmode for statusline
+function GetMode()
+    let m = mode()
+    if mode() == 'R'
+        return 'REP'
+    elseif mode() == 'v'
+        return 'VIS'
+    elseif mode() == 'V'
+        return 'VIS'
+    elseif mode() == ''
+        return 'VIS'
+    elseif mode() == 'i'
+        return 'INS'
+    elseif mode() == 'c'
+        return 'COM'
+    elseif mode() == 't'
+        return 'TER'
+    else
+        return 'NOR'
+    endif
+endfunction
+
 " Theme
 set termguicolors
 set background=dark
+let g:onedark_terminal_italics=1
 colorscheme onedark
-hi Comment cterm=italic
 
 " Statusline configure
-set statusline=\ %{&ff}\ \ %<%f\ %h%m%r%w%=%4(%p%%%)\ %9(%l,%c%V%)\ 
+set statusline=\ %{GetMode()}\ \‖\ %<%f\ %h%m%r%w%=%-6{&ff}%4(%p%%%)\ %9(%l,%c%V%)\ 
