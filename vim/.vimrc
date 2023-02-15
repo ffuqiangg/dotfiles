@@ -51,21 +51,14 @@ autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 " Getmode for statusline
 function GetMode()
-    let m = mode()
-    if mode() == 'R'
-        return 'REP'
-    elseif mode() == 'v'
-        return 'VIS'
+    if mode() == 'v'
+        return 'SEL'
     elseif mode() == 'V'
-        return 'VIS'
+        return 'SEL'
     elseif mode() == ''
-        return 'VIS'
+        return 'SEL'
     elseif mode() == 'i'
         return 'INS'
-    elseif mode() == 'c'
-        return 'COM'
-    elseif mode() == 't'
-        return 'TER'
     else
         return 'NOR'
     endif
