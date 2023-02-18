@@ -57,12 +57,6 @@ function GetMode()
         return 'VIS'
     elseif mode() == ''
         return 'VIS'
-    elseif mode() == 'c'
-        return 'SEL'
-    elseif mode() == 'C'
-        return 'SEL'
-    elseif mode() == ''
-        return 'SEL'
     elseif mode() == 'i'
         return 'INS'
     else
