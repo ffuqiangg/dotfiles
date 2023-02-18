@@ -52,10 +52,16 @@ autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 " Getmode for statusline
 function GetMode()
     if mode() == 'v'
-        return 'SEL'
+        return 'VIS'
     elseif mode() == 'V'
-        return 'SEL'
+        return 'VIS'
     elseif mode() == ''
+        return 'VIS'
+    elseif mode() == 'c'
+        return 'SEL'
+    elseif mode() == 'C'
+        return 'SEL'
+    elseif mode() == ''
         return 'SEL'
     elseif mode() == 'i'
         return 'INS'
