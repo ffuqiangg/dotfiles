@@ -11,3 +11,8 @@ bufferline = "multiple"
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = []
+right = ["diagnostics", "file-line-ending", "file-type", "spacer", "position-percentage", "spacer", "spacer", "position", "file-encoding"]
