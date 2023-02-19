@@ -10,7 +10,7 @@ bufferline = "multiple"
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
-select = "underline"
+select = "block"
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
