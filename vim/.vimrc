@@ -19,6 +19,7 @@ set noshowmode                      " don't show mode in command line(already sh
 
 set novisualbell                    " turn off visualbell
 set noerrorbells                    " turn off errorbell
+set foldcolumn=1                    " keep <n> line to show fold
 
 set hlsearch                        " highlight searchs
 set incsearch                       " do incremental searching
@@ -72,4 +73,4 @@ let g:onedark_terminal_italics=1
 colorscheme onedark
 
 " Statusline configure
-set statusline=\ %{GetMode()}\ \‖\ %<%f\ %h%m%r%w%=%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\"}\|%{&ff}\|%Y\ \ %4(%p%%%)\ %9(%l,%c%V%)\ 
+set statusline=\ %{GetMode()}\ \‖\ %<%f\ %h%m%r%w%=%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\"}\ \ %{&ff}\ \ %Y\ \ %4(%p%%%)\ \ \ %(%l,%c%)\ 
