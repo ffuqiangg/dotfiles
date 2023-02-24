@@ -14,12 +14,12 @@ set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
 set cursorline                      " highlight current line
 set laststatus=2                    " always show statusline
-set scrolloff=5                     " keep <n> lines when scrolling
 set noshowmode                      " don't show mode in command line(already show in statusline)
+set scrolloff=5                     " keep <n> lines when scrolling
 
 set novisualbell                    " turn off visualbell
 set noerrorbells                    " turn off errorbell
-set foldcolumn=1                    " keep <n> line to show fold
+" set foldcolumn=1                    " keep <n> line to show fold
 
 set hlsearch                        " highlight searchs
 set incsearch                       " do incremental searching
@@ -73,4 +73,4 @@ let g:onedark_terminal_italics=1
 colorscheme onedark
 
 " Statusline configure
-set statusline=\ %{GetMode()}\ \‖\ %<%f\ %h%m%r%w%=%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\"}\ \ %{&ff}\ \ %Y\ \ %4(%p%%%)\ \ \ %(%l,%c%)\ 
+set statusline=\ %{GetMode()}\ \‖\ %<%f\ %h%m%r%w%=\ %Y\ \(%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\"},%{&ff}\)\ \ %4(%p%%%)\ \ \ %(%l,%c%)\ 
