@@ -16,6 +16,7 @@ set cursorline                      " highlight current line
 set laststatus=2                    " always show statusline
 set noshowmode                      " don't show mode in command line(already show in statusline)
 set scrolloff=5                     " keep <n> lines when scrolling
+set numberwidth=5                   " line number width configure
 
 set novisualbell                    " turn off visualbell
 set noerrorbells                    " turn off errorbell
@@ -73,4 +74,4 @@ let g:onedark_terminal_italics=1
 colorscheme onedark
 
 " Statusline configure
-set statusline=\ %{GetMode()}\ \‖\ %<%f\ %h%m%r%w%=\ %Y\ \(%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\"},%{&ff}\)\ \ %4(%p%%%)\ \ \ %(%l,%c%)\ 
+set statusline=\ %{GetMode()}\ \‖\ %<%f\ %h%m%r%w%=\ 📋%Y\ \(%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\"},%{&ff}\)\ \ %4(%p%%%)\ \ \ %(%l,%c%)\ 
