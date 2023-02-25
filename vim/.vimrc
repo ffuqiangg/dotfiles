@@ -54,16 +54,16 @@ autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 " Getmode for statusline
 function GetMode()
-    if mode() == 'v'
-        return 'SEL'
-    elseif mode() == 'V'
-        return 'SEL'
-    elseif mode() == ''
-        return 'SEL'
-    elseif mode() == 'i'
-        return 'INS'
+    if mode() ==# 'V'
+        return '<Vl>'
+    elseif mode() ==# 'v'
+        return '<V>'
+    elseif mode() ==# ''
+        return '<Vb>'
+    elseif mode() ==# 'i'
+        return '<I>'
     else
-        return 'NOR'
+        return '<N>'
     endif
 endfunction
 
@@ -74,4 +74,4 @@ let g:onedark_terminal_italics=1
 colorscheme onedark
 
 " Statusline configure
-set statusline=\ %{GetMode()}\ \‖\ %<%f\ %h%m%r%w%=\ 📋%Y\ \(%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\"},%{&ff}\)\ \ %4(%p%%%)\ \ \ %(%l,%c%)\ 
+set statusline=\ %{GetMode()}\ \ %<%f\ %h%m%r%w%=\ 📋%Y\ \(%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\"},%{&ff}\)\ \ %4(%p%%%)\ \ \ %(%l,%c%)\ 
