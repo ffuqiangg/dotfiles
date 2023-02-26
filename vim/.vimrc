@@ -74,4 +74,4 @@ let g:onedark_terminal_italics=1
 colorscheme onedark
 
 " Statusline configure
-set statusline=\ %{GetMode()}\ \ %<%f\ %h%m%r%w%=\ 📋%Y\ \(%{\"\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"\"},%{&ff}\)\ \ %4(%p%%%)\ \ \ %(%l,%c%)\ 
+set statusline=\ %{GetMode()}\ \ %<%f\ %h%m%r%w%=\ 📋%Y\ \(%{&fenc},%{&ff}\)\ \ %4(%p%%%)\ \ \ %(%l,%c%)\ 
