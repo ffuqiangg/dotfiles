@@ -12,11 +12,11 @@ set fillchars=vert:│                " change vertsplite character
 
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
-set cursorline                      " highlight current line
-set laststatus=2                    " always show statusline
-set noshowmode                      " don't show mode in command line(already show in statusline)
-set scrolloff=5                     " keep <n> lines when scrolling
-set numberwidth=5                   " line number width configure
+" set cursorline                      " highlight current line
+" set laststatus=2                    " always show statusline
+" set noshowmode                      " don't show mode in command line(already show in statusline)
+" set scrolloff=5                     " keep <n> lines when scrolling
+" set numberwidth=5                   " line number width configure
 
 set novisualbell                    " turn off visualbell
 set noerrorbells                    " turn off errorbell
@@ -53,26 +53,26 @@ filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 " Getmode for statusline
-function GetMode()
-    if mode() ==# 'V'
-        return '<Vl>'
-    elseif mode() ==# 'v'
-        return '<V>'
-    elseif mode() ==# ''
-        return '<Vb>'
-    elseif mode() ==# 'i'
-        return '<I>'
-    else
-        return '<N>'
-    endif
-endfunction
+" function GetMode()
+"     if mode() ==# 'V'
+"         return '<Vl>'
+"     elseif mode() ==# 'v'
+"         return '<V>'
+"     elseif mode() ==# ''
+"         return '<Vb>'
+"     elseif mode() ==# 'i'
+"         return '<I>'
+"     else
+"         return '<N>'
+"     endif
+" endfunction
 
 " Theme
 set termguicolors
 set background=dark
-let g:onedark_terminal_italics=1
-colorscheme onedark
+" let g:onedark_terminal_italics=1
+colorscheme gruvbox
 
 " Statusline configure
-set statusline=\ %1*%{GetMode()}%*\ \ %<%f\ %h%m%r%w%=\ 📋%{&ft}\ \(%{&fenc},%{&ff}\)\ \ %4(%p%%%)\ \ \ %(%l,%c%)\ 
-hi User1 guifg=#C678DD guibg=#2C323C
+" set statusline=\ %1*%{GetMode()}%*\ \ %<%f\ %h%m%r%w%=\ 📋%{&ft}\ \(%{&fenc},%{&ff}\)\ \ %4(%p%%%)\ \ \ %(%l,%c%)\ 
+" hi User1 guifg=#C678DD guibg=#2C323C
