@@ -74,7 +74,4 @@ let g:onedark_terminal_italics=1
 colorscheme onedark
 
 " Statusline configure
-set statusline=%<%f\ %3*%h%m%r%w%*%=\ %2*%-20.(%P\ \(%l,%c\)%)%*📋\ %1*%{&ft}\|%{&fenc}\|%{&ff}%*
-hi User1 guifg=#61AFEF guibg=#2C323C
-hi User2 guifg=#98C379 guibg=#2C323C
-hi User3 guifg=#D19A66 guibg=#2C323C
+set statusline=%<%f\ %h%m%r%w%=\ %-20.(%P\ \(%l,%c\)%)📋\ %{&ft}\|%{&fenc}\|%{&ff}
