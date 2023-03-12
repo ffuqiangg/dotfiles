@@ -75,4 +75,4 @@ colorscheme onedark
 hi TabLineSel guifg=#282C34 guibg=#ABB2BF
 
 " Statusline configure
-set statusline=\ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&ft}\ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
+set statusline=\ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&ft}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
