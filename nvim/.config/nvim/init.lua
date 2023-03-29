@@ -21,7 +21,7 @@ require('packer').startup(function(use)
       config = function() require("nvim-autopairs").setup {} end
   }
 
-  use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+  use 'joshdick/onedark.vim' -- Theme inspired by Atom
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
 end)
