@@ -74,6 +74,7 @@ vim.opt.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.opt.termguicolors = true
+vim.g.onedark_terminal_italics = 1
 vim.cmd [[colorscheme onedark]]
 
 -- Set completeopt to have a better completion experience
