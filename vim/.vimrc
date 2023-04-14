@@ -72,7 +72,6 @@ set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
-hi TabLineSel guifg=#282C34 guibg=#ABB2BF
 
 " Statusline configure
 set statusline=\ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&fenc}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
