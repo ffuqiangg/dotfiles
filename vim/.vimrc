@@ -70,8 +70,8 @@ autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 " Theme
 set termguicolors
 set background=dark
-" let g:onedark_terminal_italics=1
-colorscheme gruvbox
+let g:onedark_terminal_italics=1
+colorscheme onedark
 
 " Statusline configure
 " set statusline=\ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&fenc}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
