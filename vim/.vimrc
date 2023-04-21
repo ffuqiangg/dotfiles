@@ -12,8 +12,8 @@ set fillchars=vert:│                " change vertsplite character
 
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
-" set cursorline                      " highlight current line
-" set laststatus=2                    " always show statusline
+set cursorline                      " highlight current line
+set laststatus=2                    " always show statusline
 " set noshowmode                      " don't show mode in command line(already show in statusline)
 " set scrolloff=5                     " keep <n> lines when scrolling
 " set numberwidth=5                   " line number width configure
@@ -74,4 +74,4 @@ let g:onedark_terminal_italics=1
 colorscheme onedark
 
 " Statusline configure
-" set statusline=\ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&fenc}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
+set statusline=\ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&fenc}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
