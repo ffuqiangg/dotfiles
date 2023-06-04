@@ -42,3 +42,5 @@ function cpg ()
         cp $args[0] $args[1]
     }
 }
+
+Invoke-Expression (&starship init powershell)
