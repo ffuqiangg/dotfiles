@@ -12,8 +12,8 @@ set fillchars=vert:│                " change vertsplite character
 
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
-set cursorline                      " highlight current line
-set laststatus=2                    " always show statusline
+" set cursorline                      " highlight current line
+" set laststatus=2                    " always show statusline
 " set noshowmode                      " don't show mode in command line(already show in statusline)
 " set scrolloff=1                     " keep <n> lines when scrolling
 " set numberwidth=5                   " line number width configure
@@ -77,7 +77,8 @@ autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
-colorscheme onedark
+colorscheme gruvbox
+hi Normal guibg=NONE
 
 " Statusline configure
-set statusline=\ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&fenc}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
+" set statusline=\ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&fenc}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
