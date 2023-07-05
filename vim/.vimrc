@@ -36,6 +36,10 @@ set shiftround                      " indent not to multiple of 'shiftwidth'
 set shiftwidth=4                    " number of spaces to use for (auto)indent
 
 " key map
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
