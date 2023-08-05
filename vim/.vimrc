@@ -16,7 +16,7 @@ set cursorline                      " highlight current line
 set laststatus=2                    " always show statusline
 " set noshowmode                      " don't show mode in command line(already show in statusline)
 " set scrolloff=1                     " keep <n> lines when scrolling
-" set numberwidth=5                   " line number width configure
+set numberwidth=5                   " line number width configure
 
 set novisualbell                    " turn off visualbell
 set noerrorbells                    " turn off errorbell
