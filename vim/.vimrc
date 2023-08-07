@@ -63,19 +63,19 @@ filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 " Getmode for statusline
-" function GetMode()
-"     if mode() ==# 'V'
-"         return 'SEL'
-"     elseif mode() ==# 'v'
-"         return 'SEL'
-"     elseif mode() ==# ''
-"         return 'SEL'
-"     elseif mode() ==# 'i'
-"         return 'INS'
-"     else
-"         return 'NOR'
-"     endif
-" endfunction
+function GetMode()
+    if mode() ==# 'V'
+        return 'SEL'
+    elseif mode() ==# 'v'
+        return 'SEL'
+    elseif mode() ==# ''
+        return 'SEL'
+    elseif mode() ==# 'i'
+        return 'INS'
+    else
+        return 'NOR'
+    endif
+endfunction
 
 " Theme
 set termguicolors
@@ -85,4 +85,4 @@ colorscheme onedark
 hi Normal guibg=NONE
 
 " Statusline configure
-set statusline=\ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&fenc}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
+set statusline=\ %{GetMode()}\ \ \ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&fenc}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
