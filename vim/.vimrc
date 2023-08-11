@@ -12,8 +12,8 @@ set fillchars=vert:│                " change vertsplite character
 
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
-set cursorline                      " highlight current line
-set laststatus=2                    " always show statusline
+" set cursorline                      " highlight current line
+" set laststatus=2                    " always show statusline
 " set noshowmode                      " don't show mode in command line(already show in statusline)
 " set scrolloff=1                     " keep <n> lines when scrolling
 set numberwidth=5                   " line number width configure
@@ -63,19 +63,19 @@ filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 " Getmode for statusline
-function GetMode()
-    if mode() ==# 'V'
-        return 'SEL'
-    elseif mode() ==# 'v'
-        return 'SEL'
-    elseif mode() ==# ''
-        return 'SEL'
-    elseif mode() ==# 'i'
-        return 'INS'
-    else
-        return 'NOR'
-    endif
-endfunction
+" function GetMode()
+"     if mode() ==# 'V'
+"         return 'SEL'
+"     elseif mode() ==# 'v'
+"         return 'SEL'
+"     elseif mode() ==# ''
+"         return 'SEL'
+"     elseif mode() ==# 'i'
+"         return 'INS'
+"     else
+"         return 'NOR'
+"     endif
+" endfunction
 
 " Theme
 set termguicolors
@@ -85,4 +85,4 @@ colorscheme onedark
 hi Normal guibg=NONE
 
 " Statusline configure
-set statusline=\ %{GetMode()}\ \ \ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&fenc}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
+" set statusline=\ %{GetMode()}\ \ \ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&fenc}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
