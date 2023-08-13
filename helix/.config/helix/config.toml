@@ -16,3 +16,6 @@ select = "block"
 left = ["mode", "spinner", "file-name"]
 center = []
 right = ["diagnostics", "file-line-ending", "file-type", "spacer", "position-percentage", "spacer", "spacer", "position", "file-encoding"]
+
+[keys.insert]
+C-k = ["normal_mode", "open_below"]
