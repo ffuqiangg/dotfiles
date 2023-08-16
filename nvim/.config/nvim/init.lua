@@ -215,13 +215,13 @@ require('lazy').setup({
 }, {
   ui = {
     icons = {
-      cmd = "⌘",
+      cmd = "💬",
       config = "🛠",
       event = "📅",
       ft = "📂",
-      init = "⚙",
+      init = "🎲",
       keys = "🗝",
-      plugin = "🔌",
+      plugin = "🗃️",
       runtime = "💻",
       source = "📄",
       start = "🚀",
