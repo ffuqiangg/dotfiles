@@ -308,6 +308,17 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
+    layout_config = {
+      horizontal = {
+        prompt_position = "top",
+        preview_width = 0.5,
+      },
+      vertical = {
+        mirror = false,
+      },
+      width = 0.9,
+      preview_cutoff = 100,
+    },
   },
 }
 
