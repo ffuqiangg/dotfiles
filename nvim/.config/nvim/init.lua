@@ -256,6 +256,8 @@ vim.o.wrap = false
 vim.o.undofile = true
 
 -- Case-insensitive searching UNLESS \C or capital in search
+vim.o.hlsearch = true
+vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
