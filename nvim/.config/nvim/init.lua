@@ -304,6 +304,8 @@ vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('i', '<C-k>', '<Esc>o', { silent = true })
+vim.keymap.set('n', 'x', '"_x', { silent = true })
+vim.keymap.set('v', '<C-x>', '"_dd', { silent = true })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
