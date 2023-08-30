@@ -296,8 +296,8 @@ vim.o.termguicolors = true
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('i', '<C-k>', '<Esc>o', { silent = true })
-vim.keymap.set('n', 'x', '"_x', { silent = true })
-vim.keymap.set('v', '<C-x>', '"_dd', { silent = true })
+vim.keymap.set({ 'n', 'v' }, 'x', '"_x', { silent = true })
+vim.keymap.set('n', '<C-x>', '"_dd', { silent = true })
 vim.keymap.set('n', '<M-UP>', ':m-2<CR>', { silent = true })
 vim.keymap.set('n', '<M-DOWN>', ':m+1<CR>', { silent = true })
 
