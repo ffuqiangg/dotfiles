@@ -298,6 +298,8 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('i', '<C-k>', '<Esc>o', { silent = true })
 vim.keymap.set('n', 'x', '"_x', { silent = true })
 vim.keymap.set('v', '<C-x>', '"_dd', { silent = true })
+vim.keymap.set({ 'n', 'v' }, '<M-UP>', ':m-2<CR>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, '<M-DOWN>', ':m+1<CR>', { silent = true })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
