@@ -88,7 +88,7 @@ set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
-hi Normal guibg=NONE
+" hi Normal guibg=NONE
 
 " Statusline configure
 " set statusline=\ %{GetMode()}\ \ \ %<%f\ %h%m%r%w%=\ \ %{&ff}\|%{&fenc}\ \ \ %-13.(%P\(%l:%c\)%)\ \ %{&ft}\ 
