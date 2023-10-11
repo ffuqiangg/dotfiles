@@ -48,8 +48,6 @@ inoremap <C-k> <Esc>o
 nnoremap x "_x
 vnoremap x "_x
 nnoremap <C-x> "_dd
-nnoremap <M-UP> :m-2<CR>
-nnoremap <M-DOWN> :m+1<CR>
 
 if &term == "xterm"
     if has("terminfo")
