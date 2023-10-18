@@ -44,7 +44,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-inoremap <C-k> <Esc>o
 nnoremap x "_x
 vnoremap x "_x
 nnoremap <C-x> "_dd
