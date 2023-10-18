@@ -1,3 +1,4 @@
 /nvim/.config/nvim/.luarc.json
 /nvim/.config/nvim/lazy-lock.json
 /vim/.vim/.netrwhist
+/lazyvim/.config/nvim/lazyvim.json
