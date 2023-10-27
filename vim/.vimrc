@@ -61,6 +61,7 @@ syntax on                           " turn syntax highlighting on by default
 " Specify file config
 filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
 
 " Getmode for statusline
 " function GetMode()
