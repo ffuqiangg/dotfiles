@@ -63,6 +63,16 @@ filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
 
+" vim-auto-popmenu
+" enable this plugin for filetypes, '*' for all files.
+let g:apc_enable_ft = {'*':1}
+" source for dictionary, current or other loaded buffers, see ':help cpt'
+set cpt=.,k,w,b
+" don't select the first item.
+set completeopt=menu,menuone,noselect
+" suppress annoy messages.
+set shortmess+=c
+
 " Getmode for statusline
 " function GetMode()
 "     if mode() ==# 'V'
