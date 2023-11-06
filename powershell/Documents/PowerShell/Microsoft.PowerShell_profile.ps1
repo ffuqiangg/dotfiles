@@ -1,5 +1,4 @@
 Set-Alias ll ls
-Set-Alias subl 'C:\Apps\Sublime Text\sublime_text.exe'
 Set-Alias play 'C:\Apps\DAUM\PotPlayer\PotPlayerMini64.exe'
 
 function video {cd ~\Videos}

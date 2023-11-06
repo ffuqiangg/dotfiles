@@ -146,7 +146,7 @@ up ()
         do
             d=$d/..
         done
-    d=$(echo $d | sed 's/^\///')
+    d=$(echo $d | sed 's,^/,,')
     if [ -z "$d" ]; then
         d=..
     fi
