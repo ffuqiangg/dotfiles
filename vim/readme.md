@@ -17,4 +17,5 @@ function make-link ($target, $link) {
     New-Item -Path $link -ItemType SymbolicLink -Value $target
 }
 ```
-以上操作在非开放者账号的 Windows 上必须以管理员身份执行。PowerShell 7.1 开始可以用相对路径进行操作，6.2 之前版本目标必须是完全限定的路径。
+以上操作在非开放者账号的 Windows 上必须以管理员身份执行。  
+目标为目录必须使用完整路径，目标为文件PowerShell 7.1 开始可以用相对路径。
