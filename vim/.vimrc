@@ -87,9 +87,8 @@ set shortmess+=c
 " Theme
 set termguicolors
 set background=dark
-let g:gruvbox_italics=1
-colorscheme gruvbox
-" hi Normal guibg=NONE
+let g:onedark_terminal_italics=1
+colorscheme onedark
 
 " Statusline configure
 set statusline=%<%f\ %h%m%r%w%=%{&ft}\ \ %{&ff}\|%{&fenc}\ \ \ %l:%c\ \ %P
