@@ -91,4 +91,4 @@ let g:onedark_terminal_italics=1
 colorscheme onedark
 
 " Statusline configure
-set statusline=%<%f\ %h%m%r%w%=%{&ft}\ \ %{&ff}\|%{&fenc}\ \ \ %l:%c\ \ %P
+set statusline=\[%n\]\ %<%f\ %h%m%r%w%=\ %{&ff}\/%{&fenc}\ \ \ %{&ft}\ \ \ %l:%c\ %P
