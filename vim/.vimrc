@@ -12,15 +12,15 @@ set fillchars=vert:│                " change vertsplite character
 
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
-" set cursorline                      " highlight current line
-set laststatus=2                    " always show statusline
-" set noshowmode                      " don't show mode in command line(already show in statusline)
+"set cursorline                     " highlight current line
+"set laststatus=2                   " always show statusline
+"set noshowmode                     " don't show mode in command line(already show in statusline)
 set scrolloff=2                     " keep <n> lines when scrolling
 set numberwidth=5                   " line number width configure
 
 set novisualbell                    " turn off visualbell
 set noerrorbells                    " turn off errorbell
-" set foldcolumn=1                    " keep <n> line to show fold
+"set foldcolumn=1                   " keep <n> line to show fold
 
 set hlsearch                        " highlight searchs
 set incsearch                       " do incremental searching
@@ -70,19 +70,19 @@ set completeopt=menu,menuone,noselect
 set shortmess+=c
 
 " Getmode for statusline
-" function GetMode()
-"     if mode() ==# 'V'
-"         return 'SEL'
-"     elseif mode() ==# 'v'
-"         return 'SEL'
-"     elseif mode() ==# ''
-"         return 'SEL'
-"     elseif mode() ==# 'i'
-"         return 'INS'
-"     else
-"         return 'NOR'
-"     endif
-" endfunction
+"function GetMode()
+"    if mode() ==# 'V'
+"        return 'SEL'
+"    elseif mode() ==# 'v'
+"        return 'SEL'
+"    elseif mode() ==# ''
+"        return 'SEL'
+"    elseif mode() ==# 'i'
+"        return 'INS'
+"    else
+"        return 'NOR'
+"    endif
+"endfunction
 
 " Theme
 set termguicolors
@@ -91,4 +91,4 @@ let g:onedark_terminal_italics=1
 colorscheme onedark
 
 " Statusline configure
-set statusline=\[%n\]\ %<%f\ %h%m%r%w%=\ %{&ff}\/%{&fenc}\ \ \ %{&ft}\ \ \ %l:%c\ %P
+"set statusline=\[%n\]\ %<%f\ %h%m%r%w%=\ %{&ff}\/%{&fenc}\ \ \ %{&ft}\ \ \ %l:%c\ %P
