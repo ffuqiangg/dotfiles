@@ -5,7 +5,7 @@ __________
 2. git clone --depth=1 git@github.com:ffuqiangg/dotfiles.git ~/.dotfiles
 3. cd ~/.dotfiles
 4. stow nvim vim tmux (you want to use)
-   note: If target file already exists, rm or rename the file first.
+   note: If target file already exists, rm or it file first.
 _________
 
 https://github.com/ffuqiangg
