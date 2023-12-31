@@ -9,7 +9,7 @@ set number                          " show line numbers
 set wildmenu                        " show list instead of just completing
 set splitright                      " put new split window in right
 set fillchars=vert:│                " change vertsplite character
-set ttimeoutlen=0                   " set <esc> response time
+set ttimeoutlen=100                 " set <esc> response time
 
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
