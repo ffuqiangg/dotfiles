@@ -9,11 +9,12 @@ set number                          " show line numbers
 set wildmenu                        " show list instead of just completing
 set splitright                      " put new split window in right
 set fillchars=vert:│                " change vertsplite character
+set ttimeoutlen=0                   " set <esc> response time
 
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
 "set cursorline                     " highlight current line
-"set laststatus=2                   " always show statusline
+set laststatus=2                   " always show statusline
 "set noshowmode                     " don't show mode in command line(already show in statusline)
 set scrolloff=2                     " keep <n> lines when scrolling
 set numberwidth=5                   " line number width configure
