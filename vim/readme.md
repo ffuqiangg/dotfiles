@@ -1,11 +1,9 @@
 windows powershell vim 目录结构
 ```
 ~\vimfiles
- | autoload  -> ~/.vim/autoload
- | colors    -> ~/.vim/colors
- | pack      -> ~/.vim/pack
+ | autoload  ->  ~/.vim/autoload
  | ...
- vimrc       -> ~/.vimrc
+ vimrc       ->  ~/.vimrc
 ```
 powershell 创建类 Linux 软连接
 ```powersehll

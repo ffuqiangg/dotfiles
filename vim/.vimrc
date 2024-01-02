@@ -1,3 +1,32 @@
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
+
+" UI
+Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
+
+" Autopopemenu
+Plug 'skywind3000/vim-auto-popmenu'
+Plug 'skywind3000/vim-dict'
+
+" Autopairs
+Plug 'jiangmiao/auto-pairs'
+
+" Surround
+Plug 'tpope/vim-surround'
+
+call plug#end()
+" You can revert the settings after the call like so:
+"   filetype indent off   " Disable file-type-specific indentation
+"   syntax off            " Disable syntax highlighting
 set nocompatible                    " use vim defaults
 set showcmd                         " display incomplete commands
 set showmatch                       " jump to matchs when entering parenthes
@@ -10,7 +39,6 @@ set wildmenu                        " show list instead of just completing
 set splitright                      " put new split window in right
 set fillchars=vert:│                " change vertsplite character
 set ttimeoutlen=100                 " set <esc> response time
-
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
 "set cursorline                     " highlight current line
@@ -18,16 +46,13 @@ set laststatus=2                    " always show statusline
 "set noshowmode                     " don't show mode in command line(already show in statusline)
 set scrolloff=2                     " keep <n> lines when scrolling
 set numberwidth=5                   " line number width configure
-
 set novisualbell                    " turn off visualbell
 set noerrorbells                    " turn off errorbell
 "set foldcolumn=1                   " keep <n> line to show fold
-
 set hlsearch                        " highlight searchs
 set incsearch                       " do incremental searching
 set ignorecase                      " ignore case when searching
 set smartcase                       " no ignorecase if Uppercase char present
-
 set autoindent                      " always set autoindenting on
 set smartindent                     " indent works for c-like
 set tabstop=4                       " <Tab> width look for
@@ -90,6 +115,9 @@ set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
+let g:lightline = {
+    \ 'colorscheme': 'onedark',
+    \}
 
 " Statusline configure
 "set statusline=\[%n\]\ %<%f\ %h%m%r%w%=\ %{&ff}\/%{&fenc}\ \ \ %{&ft}\ \ \ %l:%c\ %P
