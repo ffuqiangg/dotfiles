@@ -41,6 +41,10 @@
     auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
+    name = 'core#banner'
+    enable = false
+
+[[layers]]
     name = 'shell'
     default_position = 'top'
     default_height = 40
@@ -57,6 +61,11 @@
         "sh",
         "yaml"
     ]
+
+[[layers]]
+    name = 'core'
+    filetree_show_hidden = true
+    enable_smooth_scrolling = false
 
 [[layers]]
     name = 'chinese'
