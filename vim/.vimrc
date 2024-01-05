@@ -12,6 +12,7 @@ call plug#begin()
 " UI
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-startity'
 
 " Autopopemenu
 Plug 'skywind3000/vim-auto-popmenu'
