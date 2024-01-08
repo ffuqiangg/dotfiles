@@ -13,6 +13,7 @@ call plug#begin()
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
+Plug 'preservim/nerdtree'
 
 " Autopopemenu
 Plug 'skywind3000/vim-auto-popmenu'
@@ -62,11 +63,27 @@ set softtabstop=4                   " spaces number when insert <Tab>
 set shiftround                      " indent not to multiple of 'shiftwidth'
 set shiftwidth=4                    " number of spaces to use for (auto)indent
 
+let mapleader="\<Space>"
 " key map
 nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+nnoremap <C-h> <C-w>h<CR>
+nnoremap <C-j> <C-w>j<CR>
+nnoremap <C-k> <C-w>k<CR>
+nnoremap <C-l> <C-w>l<CR>
+nnoremap H gT
+nnoremap L gt
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 if &term == "xterm"
     if has("terminfo")
