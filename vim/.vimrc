@@ -14,16 +14,11 @@ Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdtree'
-
-" Autopopemenu
 Plug 'skywind3000/vim-auto-popmenu'
 Plug 'skywind3000/vim-dict'
-
-" Autopairs
 Plug 'jiangmiao/auto-pairs'
-
-" Surround
 Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 
 call plug#end()
 " You can revert the settings after the call like so:
