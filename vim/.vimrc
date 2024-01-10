@@ -70,6 +70,8 @@ nnoremap <C-k> <C-w>k<CR>
 nnoremap <C-l> <C-w>l<CR>
 nnoremap H gT
 nnoremap L gt
+nnoremap T H
+nnoremap B L
 " NERDTree
 nnoremap <leader>e :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
