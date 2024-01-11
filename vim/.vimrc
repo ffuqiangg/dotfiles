@@ -16,7 +16,7 @@ Plug 'skywind3000/vim-auto-popmenu'
 Plug 'skywind3000/vim-dict'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
+Plug 'junegunn/fzf'
 Plug 'tpope/vim-commentary'
 
 call plug#end()
@@ -76,12 +76,16 @@ nnoremap <leader>e :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-" FZF
-nnoremap <leader>f :FZF<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" FZF
+nnoremap <leader>f :FZF<CR>
+" Buffers
+nnoremap <leader>bl :ls<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
 
 if &term == "xterm"
     if has("terminfo")
