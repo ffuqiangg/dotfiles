@@ -8,8 +8,6 @@ call plug#begin()
 "   - Avoid using standard Vim directory names like 'plugin'
 
 " Make sure you use single quotes
-
-" UI
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
@@ -19,6 +17,7 @@ Plug 'skywind3000/vim-dict'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 " You can revert the settings after the call like so:
