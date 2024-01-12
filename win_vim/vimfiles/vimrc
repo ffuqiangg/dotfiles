@@ -1,7 +1,3 @@
-" --- SET MAP LEADER ---
-let mapleader="\<Space>"
-" --- MAP LEADER END ---
-
 " --- AUTO INSTALL VIM-PLUG -------
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -10,29 +6,31 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 " --- AUTO INSTALL VIM-PLUG END ---
 
-" --- VIM PLUGINS SETTINGS ---
 call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
 
-" colorscheme
+" Make sure you use single quotes
 Plug 'joshdick/onedark.vim'
-" welcome page
+Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
-" file tree
 Plug 'preservim/nerdtree'
-" insert or delete brackets, parens, quotes in pair
+Plug 'skywind3000/vim-auto-popmenu'
+Plug 'skywind3000/vim-dict'
 Plug 'jiangmiao/auto-pairs'
-" Delete/change/add parentheses/quotes/XML-tags
 Plug 'tpope/vim-surround'
-" fuzzy finder
 Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-" easy comment
 Plug 'tpope/vim-commentary'
 
 call plug#end()
-" --- VIM PLUGINS SETTINGS END ---
-
-" --- BASIC SETTINGS ---
+" You can revert the settings after the call like so:
+"   filetype indent off   " Disable file-type-specific indentation
+"   syntax off            " Disable syntax highlighting
 set nocompatible                    " use vim defaults
 set showcmd                         " display incomplete commands
 set showmatch                       " jump to matchs when entering parenthes
@@ -48,7 +46,7 @@ set ttimeoutlen=100                 " set <esc> response time
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
 "set cursorline                     " highlight current line
-"set laststatus=2                   " always show statusline
+set laststatus=2                    " always show statusline
 "set noshowmode                     " don't show mode in command line(already show in statusline)
 set scrolloff=2                     " keep <n> lines when scrolling
 set numberwidth=5                   " line number width configure
@@ -66,9 +64,8 @@ set expandtab                       " expand <Tab> as spaces
 set softtabstop=4                   " spaces number when insert <Tab>
 set shiftround                      " indent not to multiple of 'shiftwidth'
 set shiftwidth=4                    " number of spaces to use for (auto)indent
-" --- BASIC SETTINGS END ---
 
-" --- KEY MAPPING ---
+let mapleader="\<Space>"
 " key map
 nnoremap k gk
 nnoremap gk k
@@ -82,8 +79,7 @@ nnoremap H gT
 nnoremap L gt
 nnoremap T H
 nnoremap B L
-
-" nerdtree
+" NERDTree
 nnoremap <leader>e :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -92,28 +88,64 @@ nnoremap <C-f> :NERDTreeFind<CR>
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
 " FZF
 nnoremap <leader>f :FZF<CR>
-
 " Buffers
 nnoremap <leader>bl :ls<CR>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
 
-" --- KEY MAPPING END ---
-
+if &term == "xterm"
+    if has("terminfo")
+        set t_Co=8
+        set t_Sf=^[[3%p1%dm
+        set t_Sb=^[[4%p1%dm
+    else
+        set t_Co=8
+        set t_Sf=^[[3%dm
+        set t_Sb=^[[4%dm
+    endif
+endif
 syntax on                           " turn syntax highlighting on by default
 
-" --- SPECIFY FILE CONFIG ---
+" Specify file config
 filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
-" --- SPECIFY FILE CONFIG END ---
 
-" --- COLORSCHEME ---
+" vim-auto-popmenu
+" enable this plugin for filetypes, '*' for all files.
+let g:apc_enable_ft = {'*':1}
+" source for dictionary, current or other loaded buffers, see ':help cpt'
+set cpt=.,k,w,b
+" don't select the first item.
+set completeopt=menu,menuone,noselect
+" suppress annoy messages.
+set shortmess+=c
+
+" Getmode for statusline
+"function GetMode()
+"    if mode() ==# 'V'
+"        return 'SEL'
+"    elseif mode() ==# 'v'
+"        return 'SEL'
+"    elseif mode() ==# ''
+"        return 'SEL'
+"    elseif mode() ==# 'i'
+"        return 'INS'
+"    else
+"        return 'NOR'
+"    endif
+"endfunction
+
+" Theme
 set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
-" --- COLORSCHEME END ---
+let g:lightline = {
+    \ 'colorscheme': 'onedark',
+    \}
+
+" Statusline configure
+"set statusline=\[%n\]\ %<%f\ %h%m%r%w%=\ %{&ff}\/%{&fenc}\ \ \ %{&ft}\ \ \ %l:%c\ %P
