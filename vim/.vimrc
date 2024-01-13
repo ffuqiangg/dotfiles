@@ -18,7 +18,7 @@ Plug 'joshdick/onedark.vim'
 " welcome page
 Plug 'mhinz/vim-startify'
 " file tree
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTree', 'NERDTreeFind'] }
 " insert or delete brackets, parens, quotes in pair
 Plug 'jiangmiao/auto-pairs'
 " Delete/change/add parentheses/quotes/XML-tags
@@ -28,11 +28,14 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 " easy comment
 Plug 'tpope/vim-commentary'
+" coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 " --- VIM PLUGINS SETTINGS END ---
 
 " --- BASIC SETTINGS ---
+syntax on                           " turn syntax highlighting on by default
 set nocompatible                    " use vim defaults
 set showcmd                         " display incomplete commands
 set showmatch                       " jump to matchs when entering parenthes
@@ -100,16 +103,21 @@ nnoremap <leader>f :FZF<CR>
 nnoremap <leader>bl :ls<CR>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
-
 " --- KEY MAPPING END ---
-
-syntax on                           " turn syntax highlighting on by default
 
 " --- SPECIFY FILE CONFIG ---
 filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
 " --- SPECIFY FILE CONFIG END ---
+
+" --- FZF CONFIG ---
+let g:fzf_layout = { 'down': '40%' }
+" --- FZF CONFIG END ---
+
+" --- COC CONFIG ---
+let g:coc_global_extensions = ['coc-marketplace', 'coc-sh', 'coc-snippets', 'coc-yaml']
+" --- COC COFIG END ---
 
 " --- COLORSCHEME ---
 set termguicolors
