@@ -1,36 +1,27 @@
-" --- AUTO INSTALL VIM-PLUG -------
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-" --- AUTO INSTALL VIM-PLUG END ---
+" VIM-PLUG INSTALL ON WINDOWS
+" iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+"     ni $HOME/vimfiles/autoload/plug.vim -Force
 
+" --- KEYMAP SETTING ---
+let mapleader="\<Space>"
+" --- KEYMAP SETTING END ---
+
+" --- VIM PLUGINS CONFIGURE ---
 call plug#begin()
-" The default plugin directory will be as follows:
-"   - Vim (Linux/macOS): '~/.vim/plugged'
-"   - Vim (Windows): '~/vimfiles/plugged'
-"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
-" You can specify a custom plugin directory by passing it as the argument
-"   - e.g. `call plug#begin('~/.vim/plugged')`
-"   - Avoid using standard Vim directory names like 'plugin'
-
-" Make sure you use single quotes
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTree', 'NERDTreeFind']  }
 Plug 'skywind3000/vim-auto-popmenu'
 Plug 'skywind3000/vim-dict'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-Plug 'junegunn/fzf'
-Plug 'tpope/vim-commentary'
-
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
+Plug 'junegunn/fzf.vim'
 call plug#end()
-" You can revert the settings after the call like so:
-"   filetype indent off   " Disable file-type-specific indentation
-"   syntax off            " Disable syntax highlighting
+
+" --- BASIC CONFIGURE ---
+syntax on                           " turn syntax highlighting on by default
 set nocompatible                    " use vim defaults
 set showcmd                         " display incomplete commands
 set showmatch                       " jump to matchs when entering parenthes
@@ -64,9 +55,12 @@ set expandtab                       " expand <Tab> as spaces
 set softtabstop=4                   " spaces number when insert <Tab>
 set shiftround                      " indent not to multiple of 'shiftwidth'
 set shiftwidth=4                    " number of spaces to use for (auto)indent
+filetype plugin indent on
+autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
+" --- BASIC CONFIGURE END ---
 
-let mapleader="\<Space>"
-" key map
+" --- BASIC KEYMAP ---
 nnoremap k gk
 nnoremap gk k
 nnoremap j gj
@@ -79,73 +73,44 @@ nnoremap H gT
 nnoremap L gt
 nnoremap T H
 nnoremap B L
-" NERDTree
+nnoremap <leader>bl :ls<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
+" --- BASIC KEYMAP END ---
+
+" --- NERDTREE CONFIGURE ---
 nnoremap <leader>e :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" FZF
-nnoremap <leader>f :FZF<CR>
-" Buffers
-nnoremap <leader>bl :ls<CR>
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
+" --- NERDTREE CONFIGURE END ---
 
-if &term == "xterm"
-    if has("terminfo")
-        set t_Co=8
-        set t_Sf=^[[3%p1%dm
-        set t_Sb=^[[4%p1%dm
-    else
-        set t_Co=8
-        set t_Sf=^[[3%dm
-        set t_Sb=^[[4%dm
-    endif
-endif
-syntax on                           " turn syntax highlighting on by default
+" --- FZF CONFIGURE ---
+let g:fzf_layout = { 'down': '40%'  }
+function! s:find_git_root()
+    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+command! ProjectFiles execute 'Files' s:find_git_root()
+nnoremap <leader>f :ProjectFiles<CR>
+nnoremap <leader>F :FZF<CR>
+" --- FZF CONFIGURE END ---
 
-" Specify file config
-filetype plugin indent on
-autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
-
-" vim-auto-popmenu
-" enable this plugin for filetypes, '*' for all files.
+" --- VIM-AUTO-POPMENU CONFIGURE ---
 let g:apc_enable_ft = {'*':1}
-" source for dictionary, current or other loaded buffers, see ':help cpt'
 set cpt=.,k,w,b
-" don't select the first item.
 set completeopt=menu,menuone,noselect
-" suppress annoy messages.
 set shortmess+=c
+" --- VIM-AUTO-POPMENU CONFIGURE END ---
 
-" Getmode for statusline
-"function GetMode()
-"    if mode() ==# 'V'
-"        return 'SEL'
-"    elseif mode() ==# 'v'
-"        return 'SEL'
-"    elseif mode() ==# ''
-"        return 'SEL'
-"    elseif mode() ==# 'i'
-"        return 'INS'
-"    else
-"        return 'NOR'
-"    endif
-"endfunction
-
-" Theme
+" --- COLORSTHEME CONFIGURE ---
 set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
 let g:lightline = {
     \ 'colorscheme': 'onedark',
-    \}
-
-" Statusline configure
-"set statusline=\[%n\]\ %<%f\ %h%m%r%w%=\ %{&ff}\/%{&fenc}\ \ \ %{&ft}\ \ \ %l:%c\ %P
+    \ 'separator': { 'left': '', 'right': ''  },
+    \ 'subseparator': { 'left': '', 'right': ''  },
+    \ }
+" --- COLORSTHEME CONFIGURE END ---
