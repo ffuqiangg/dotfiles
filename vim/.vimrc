@@ -1,6 +1,6 @@
-" --- SET MAP LEADER ---
+" --- SET MAPLEADER ---
 let mapleader="\<Space>"
-" --- MAP LEADER END ---
+" --- SET MAPLEADER END ---
 
 " --- AUTO INSTALL VIM-PLUG -------
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -12,25 +12,15 @@ endif
 
 " --- VIM PLUGINS SETTINGS ---
 call plug#begin()
-
-" colorscheme
 Plug 'joshdick/onedark.vim'
-" welcome page
 Plug 'mhinz/vim-startify'
-" file tree
 Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTree', 'NERDTreeFind'] }
-" insert or delete brackets, parens, quotes in pair
 Plug 'jiangmiao/auto-pairs'
-" Delete/change/add parentheses/quotes/XML-tags
 Plug 'tpope/vim-surround'
-" fuzzy finder
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-" easy comment
-Plug 'tpope/vim-commentary'
-" coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+Plug 'itchyny/lightline.vim'
 call plug#end()
 " --- VIM PLUGINS SETTINGS END ---
 
@@ -51,7 +41,7 @@ set ttimeoutlen=100                 " set <esc> response time
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
 "set cursorline                     " highlight current line
-"set laststatus=2                   " always show statusline
+set laststatus=2                    " always show statusline
 "set noshowmode                     " don't show mode in command line(already show in statusline)
 set scrolloff=2                     " keep <n> lines when scrolling
 set numberwidth=5                   " line number width configure
@@ -71,8 +61,7 @@ set shiftround                      " indent not to multiple of 'shiftwidth'
 set shiftwidth=4                    " number of spaces to use for (auto)indent
 " --- BASIC SETTINGS END ---
 
-" --- KEY MAPPING ---
-" key map
+" --- BASIC KEYMAP ---
 nnoremap k gk
 nnoremap gk k
 nnoremap j gj
@@ -85,25 +74,11 @@ nnoremap H gT
 nnoremap L gt
 nnoremap T H
 nnoremap B L
-
-" nerdtree
-nnoremap <leader>e :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
-" FZF
-nnoremap <leader>f :FZF<CR>
-
-" Buffers
 nnoremap <leader>bl :ls<CR>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
-" --- KEY MAPPING END ---
+nnoremap <leader>bd :bd<CR>
+" --- BASIC KEYMAP END ---
 
 " --- SPECIFY FILE CONFIG ---
 filetype plugin indent on
@@ -111,17 +86,37 @@ autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
 " --- SPECIFY FILE CONFIG END ---
 
-" --- FZF CONFIG ---
-let g:fzf_layout = { 'down': '40%' }
-" --- FZF CONFIG END ---
+" ---  NERDTREE CONFIGURE ---
+nnoremap <leader>e :NERDTreeFocus<CR>
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" ---  NERDTREE CONFIGURE END ---
 
 " --- COC CONFIG ---
 let g:coc_global_extensions = ['coc-marketplace', 'coc-sh', 'coc-snippets', 'coc-yaml']
 " --- COC COFIG END ---
+
+" --- FZF CONFIG ---
+let g:fzf_layout = { 'down': '40%' }
+function! s:find_git_root()
+    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+command! ProjectFiles execute 'Files' s:find_git_root()
+nnoremap <leader>f :ProjectFiles<CR>
+nnoremap <leader>F :FZF<CR>
+" --- FZF CONFIG END ---
 
 " --- COLORSCHEME ---
 set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
+" lightline
+let g:lightline = {
+    \ 'colorscheme': 'onedark',
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '', 'right': '' },
+    \ }
 " --- COLORSCHEME END ---
