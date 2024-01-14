@@ -89,7 +89,7 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " --- FZF CONFIGURE ---
 let g:fzf_layout = { 'down': '40%'  }
 function! s:find_git_root()
-    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+    return system('git rev-parse --show-toplevel')[:-2]
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
 nnoremap <leader>f :ProjectFiles<CR>
