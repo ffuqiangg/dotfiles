@@ -71,6 +71,14 @@ nnoremap <C-h> <C-w>h<CR>
 nnoremap <C-j> <C-w>j<CR>
 nnoremap <C-k> <C-w>k<CR>
 nnoremap <C-l> <C-w>l<CR>
+nnoremap H gT
+nnoremap L gt
+nnoremap T H
+nnoremap B L
+nnoremap <leader>bl :ls<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
+nnoremap <CR> :noh<CR>
 " --- BASIC KEYMAP END ---
 
 " --- SPECIFY FILE CONFIG ---
