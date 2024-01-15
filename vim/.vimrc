@@ -20,8 +20,8 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
+"Plug 'itchyny/lightline.vim'
+"Plug 'mengelbrecht/lightline-bufferline'
 call plug#end()
 " --- VIM PLUGINS SETTINGS END ---
 
@@ -42,7 +42,7 @@ set ttimeoutlen=100                 " set <esc> response time
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
 "set cursorline                     " highlight current line
-set laststatus=2                    " always show statusline
+"set laststatus=2                   " always show statusline
 "set noshowmode                     " don't show mode in command line(already show in statusline)
 set scrolloff=2                     " keep <n> lines when scrolling
 set numberwidth=5                   " line number width configure
@@ -108,16 +108,15 @@ set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
-set showtabline=2
-" lightline
-let g:lightline = {
-    \ 'colorscheme': 'onedark',
-    \ 'separator': {'left': '', 'right': ''},
-    \ 'subseparator': {'left': '', 'right': ''},
-    \ 'tabline': {'left': [['buffer']], 'right': [['close']]},
-    \ 'component_expand': {'buffer': 'lightline#bufferline#buffers'},
-    \ 'component_type': {'buffer': 'tabsel'}
-    \ }
-nmap L <Plug>lightline#bufferline#go_next()
-nmap H <Plug>lightline#bufferline#go_previous()
+"set showtabline=2
+"let g:lightline = {
+"    \ 'colorscheme': 'onedark',
+"    \ 'separator': {'left': '', 'right': ''},
+"    \ 'subseparator': {'left': '', 'right': ''},
+"    \ 'tabline': {'left': [['buffer']], 'right': [['close']]},
+"    \ 'component_expand': {'buffer': 'lightline#bufferline#buffers'},
+"    \ 'component_type': {'buffer': 'tabsel'}
+"    \ }
+"nmap L <Plug>lightline#bufferline#go_next()
+"nmap H <Plug>lightline#bufferline#go_previous()
 " --- UI CONFIGURE END ---
