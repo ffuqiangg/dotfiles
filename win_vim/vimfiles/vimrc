@@ -10,6 +10,7 @@ let mapleader="\<Space>"
 call plug#begin()
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTree', 'NERDTreeFind']  }
 Plug 'skywind3000/vim-auto-popmenu'
@@ -69,13 +70,6 @@ nnoremap <C-h> <C-w>h<CR>
 nnoremap <C-j> <C-w>j<CR>
 nnoremap <C-k> <C-w>k<CR>
 nnoremap <C-l> <C-w>l<CR>
-nnoremap H gT
-nnoremap L gt
-nnoremap T H
-nnoremap B L
-nnoremap <leader>bl :ls<CR>
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
 " --- BASIC KEYMAP END ---
 
 " --- NERDTREE CONFIGURE ---
@@ -89,7 +83,7 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " --- FZF CONFIGURE ---
 let g:fzf_layout = { 'down': '40%'  }
 function! s:find_git_root()
-    return system('git rev-parse --show-toplevel')[:-2]
+    return system('git rev-parse --show-toplevel > NUL')[:-2]
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
 nnoremap <leader>f :ProjectFiles<CR>
@@ -103,14 +97,20 @@ set completeopt=menu,menuone,noselect
 set shortmess+=c
 " --- VIM-AUTO-POPMENU CONFIGURE END ---
 
-" --- COLORSTHEME CONFIGURE ---
+" --- UI CONFIGURE ---
 set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
+set showtabline=2
 let g:lightline = {
     \ 'colorscheme': 'onedark',
     \ 'separator': { 'left': '', 'right': ''  },
     \ 'subseparator': { 'left': '', 'right': ''  },
+    \ 'tabline': {'left': [['buffer']], 'right': [['close']]},
+    \ 'component_expand': {'buffer': 'lightline#bufferline#buffers'},
+    \ 'component_type': {'buffer': 'tabsel'}
     \ }
-" --- COLORSTHEME CONFIGURE END ---
+nmap L <Plug>lightline#bufferline#go_next()
+nmap H <Plug>lightline#bufferline#go_previous()
+" --- UI CONFIGURE END ---

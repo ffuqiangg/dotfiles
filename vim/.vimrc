@@ -21,6 +21,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 call plug#end()
 " --- VIM PLUGINS SETTINGS END ---
 
@@ -70,14 +71,6 @@ nnoremap <C-h> <C-w>h<CR>
 nnoremap <C-j> <C-w>j<CR>
 nnoremap <C-k> <C-w>k<CR>
 nnoremap <C-l> <C-w>l<CR>
-nnoremap H gT
-nnoremap L gt
-nnoremap T H
-nnoremap B L
-nnoremap <leader>bl :ls<CR>
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bd :bd<CR>
 " --- BASIC KEYMAP END ---
 
 " --- SPECIFY FILE CONFIG ---
@@ -96,6 +89,8 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 
 " --- COC CONFIG ---
 let g:coc_global_extensions = ['coc-marketplace', 'coc-sh', 'coc-snippets', 'coc-yaml']
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " --- COC COFIG END ---
 
 " --- FZF CONFIG ---
@@ -108,15 +103,21 @@ nnoremap <leader>f :ProjectFiles<CR>
 nnoremap <leader>F :FZF<CR>
 " --- FZF CONFIG END ---
 
-" --- COLORSCHEME ---
+" --- UI CONFIGURE ---
 set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
+set showtabline=2
 " lightline
 let g:lightline = {
     \ 'colorscheme': 'onedark',
-    \ 'separator': { 'left': '', 'right': '' },
-    \ 'subseparator': { 'left': '', 'right': '' },
+    \ 'separator': {'left': '', 'right': ''},
+    \ 'subseparator': {'left': '', 'right': ''},
+    \ 'tabline': {'left': [['buffer']], 'right': [['close']]},
+    \ 'component_expand': {'buffer': 'lightline#bufferline#buffers'},
+    \ 'component_type': {'buffer': 'tabsel'}
     \ }
-" --- COLORSCHEME END ---
+nmap L <Plug>lightline#bufferline#go_next()
+nmap H <Plug>lightline#bufferline#go_previous()
+" --- UI CONFIGURE END ---
