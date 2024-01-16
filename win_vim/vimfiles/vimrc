@@ -13,8 +13,8 @@ Plug 'joshdick/onedark.vim'
 "Plug 'mengelbrecht/lightline-bufferline'
 Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTree', 'NERDTreeFind']  }
-Plug 'skywind3000/vim-auto-popmenu'
-Plug 'skywind3000/vim-dict'
+"Plug 'skywind3000/vim-auto-popmenu'
+"Plug 'skywind3000/vim-dict'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
@@ -77,7 +77,6 @@ nnoremap B L
 nnoremap <leader>bl :ls<CR>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
-nnoremap <CR> :noh<CR>
 " --- BASIC KEYMAP END ---
 
 " --- NERDTREE CONFIGURE ---
@@ -94,15 +93,15 @@ function! s:find_git_root()
     return system('git rev-parse --show-toplevel > NUL')[:-2]
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
-nnoremap <leader>f :ProjectFiles<CR>
-nnoremap <leader>F :FZF<CR>
+nnoremap <silent> <leader>f :ProjectFiles<CR>
+nnoremap <silent> <leader>F :FZF<CR>
 " --- FZF CONFIGURE END ---
 
 " --- VIM-AUTO-POPMENU CONFIGURE ---
-let g:apc_enable_ft = {'*':1}
-set cpt=.,k,w,b
-set completeopt=menu,menuone,noselect
-set shortmess+=c
+"let g:apc_enable_ft = {'*':1}
+"set cpt=.,k,w,b
+"set completeopt=menu,menuone,noselect
+"set shortmess+=c
 " --- VIM-AUTO-POPMENU CONFIGURE END ---
 
 " --- UI CONFIGURE ---
