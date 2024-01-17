@@ -90,12 +90,10 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 
 " --- FZF CONFIGURE ---
 let g:fzf_layout = { 'down': '40%'  }
-function! s:find_git_root()
-    return system('git rev-parse --show-toplevel > NUL')[:-2]
-endfunction
-command! ProjectFiles execute 'Files' s:find_git_root()
-nnoremap <silent> <leader>f :ProjectFiles<CR>
-nnoremap <silent> <leader>F :FZF<CR>
+autocmd! FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+let $FZF_DEFAULT_OPTS = '--inline-info'
+nnoremap <silent> <leader>f :FZF<CR>
 " --- FZF CONFIGURE END ---
 
 " --- VIM-AUTO-POPMENU CONFIGURE ---
