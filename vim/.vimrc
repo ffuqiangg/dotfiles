@@ -118,15 +118,4 @@ set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
-"set showtabline=2
-"let g:lightline = {
-"    \ 'colorscheme': 'onedark',
-"    \ 'separator': {'left': '', 'right': ''},
-"    \ 'subseparator': {'left': '', 'right': ''},
-"    \ 'tabline': {'left': [['buffer']], 'right': [['close']]},
-"    \ 'component_expand': {'buffer': 'lightline#bufferline#buffers'},
-"    \ 'component_type': {'buffer': 'tabsel'}
-"    \ }
-"nmap L <Plug>lightline#bufferline#go_next()
-"nmap H <Plug>lightline#bufferline#go_previous()
 " --- UI CONFIGURE END ---
