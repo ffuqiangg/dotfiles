@@ -75,10 +75,6 @@ nnoremap H gT
 nnoremap L gt
 nnoremap T H
 nnoremap B L
-nnoremap <leader>bl :ls<CR>
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bd :bd<CR>
 " --- BASIC KEYMAP END ---
 
 " --- SPECIFY FILE CONFIG ---
@@ -102,13 +98,19 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 " --- COC COFIG END ---
 
 " --- FZF CONFIG ---
-let g:fzf_layout = { 'down': '40%' }
-function! s:find_git_root()
-    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-endfunction
-command! ProjectFiles execute 'Files' s:find_git_root()
-nnoremap <leader>f :ProjectFiles<CR>
-nnoremap <leader>F :FZF<CR>
+nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>g :GFiles<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <Leader>h :Helptags<CR>
+let g:fzf_layout = { 'down': '60%' }
+autocmd! FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+let g:fzf_buffers_jump = 1
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+let g:fzf_tags_command = 'ctags -R'
+let $FZF_DEFAULT_OPTS = '--inline-info'
+let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -g '!**/.git/**' -- ".<q-args>, 1, <bang>0)
 " --- FZF CONFIG END ---
 
 " --- UI CONFIGURE ---
