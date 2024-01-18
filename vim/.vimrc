@@ -26,7 +26,7 @@ call plug#end()
 " --- VIM PLUGINS SETTINGS END ---
 
 " --- BASIC SETTINGS ---
-set mouse=a
+set mouse=a                         " turn mouse support on
 syntax on                           " turn syntax highlighting on by default
 set nocompatible                    " use vim defaults
 set showcmd                         " display incomplete commands
