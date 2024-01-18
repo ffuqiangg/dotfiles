@@ -19,6 +19,7 @@ call plug#end()
 
 " --- BASIC CONFIGURE ---
 syntax on                           " turn syntax highlighting on by default
+set mouse=a                         " turn mouse support on
 set nocompatible                    " use vim defaults
 set showcmd                         " display incomplete commands
 set showmatch                       " jump to matchs when entering parenthes
@@ -81,11 +82,14 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " --- NERDTREE CONFIGURE END ---
 
 " --- FZF CONFIGURE ---
-let g:fzf_layout = { 'down': '35%' }
+nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>g :GFiles<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <Leader>h :Helptags<CR>
+let g:fzf_layout = { 'down': '40%' }
 autocmd! FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 let $FZF_DEFAULT_OPTS = '--inline-info'
-nnoremap <silent> <leader>f :FZF<CR>
 " --- FZF CONFIGURE END ---
 
 " --- VIM-AUTO-POPMENU CONFIGURE ---

@@ -103,7 +103,7 @@ nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>g :GFiles<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
 nnoremap <silent> <Leader>h :Helptags<CR>
-let g:fzf_layout = { 'down': '60%' }
+let g:fzf_layout = { 'down': '40%' }
 autocmd! FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 let g:fzf_buffers_jump = 1
