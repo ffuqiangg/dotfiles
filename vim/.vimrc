@@ -26,6 +26,7 @@ call plug#end()
 " --- VIM PLUGINS SETTINGS END ---
 
 " --- BASIC SETTINGS ---
+set mouse=a
 syntax on                           " turn syntax highlighting on by default
 set nocompatible                    " use vim defaults
 set showcmd                         " display incomplete commands
@@ -111,6 +112,8 @@ let g:fzf_tags_command = 'ctags -R'
 let $FZF_DEFAULT_OPTS = '--inline-info'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -g '!**/.git/**' -- ".<q-args>, 1, <bang>0)
+let g:fzf_vim = {}
+let g:fzf_vim.preview_window = []
 " --- FZF CONFIG END ---
 
 " --- UI CONFIGURE ---
