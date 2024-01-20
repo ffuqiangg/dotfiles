@@ -20,7 +20,6 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'itchyny/lightline.vim'
 call plug#end()
 " --- VIM PLUGINS SETTINGS END ---
 
@@ -120,5 +119,4 @@ set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
-let g:lightline = {'colorscheme': 'onedark'}
 " --- UI CONFIGURE END ---
