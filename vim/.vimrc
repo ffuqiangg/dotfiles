@@ -79,9 +79,9 @@ nnoremap B L
 " --- BASIC KEYMAP END ---
 
 " --- SPECIFY FILE CONFIG ---
-filetype plugin indent on
-autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
+"filetype plugin indent on
+"autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
+"autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
 " --- SPECIFY FILE CONFIG END ---
 
 " ---  NERDTREE CONFIGURE ---
