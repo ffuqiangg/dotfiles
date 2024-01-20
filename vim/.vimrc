@@ -20,8 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'itchyny/lightline.vim'
-"Plug 'mengelbrecht/lightline-bufferline'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 " --- VIM PLUGINS SETTINGS END ---
 
@@ -85,7 +84,7 @@ nnoremap B L
 " --- SPECIFY FILE CONFIG END ---
 
 " ---  NERDTREE CONFIGURE ---
-nnoremap <leader>e :NERDTreeFocus<CR>
+nnoremap <silent> <leader>e :NERDTreeFocus<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " Close the tab if NERDTree is the only window remaining in it.
@@ -121,4 +120,5 @@ set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
+let g:lightline = {'colorscheme': 'onedark'}
 " --- UI CONFIGURE END ---
