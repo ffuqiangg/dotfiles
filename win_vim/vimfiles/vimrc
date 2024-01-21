@@ -74,10 +74,10 @@ nnoremap L gt
 nnoremap T H
 nnoremap B L
 " Move line
-nnoremap <silent> <A-j> :m +1<CR>
-nnoremap <silent> <A-k> :m -2<CR>
-vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
-vnoremap <silent> <A-k> :m -2<CR>gv=gv
+nnoremap <silent> <C-n> :m +1<CR>
+nnoremap <silent> <C-p> :m -2<CR>
+vnoremap <silent> <C-n> :m '>+1<CR>gv=gv
+vnoremap <silent> <C-p> :m -2<CR>gv=gv
 " Adjust split sizes easier
 noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
