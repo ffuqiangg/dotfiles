@@ -77,10 +77,15 @@ nnoremap L gt
 nnoremap T H
 nnoremap B L
 " Move line
-nnoremap <silent> J :m +1<CR>
-nnoremap <silent> K :m -2<CR>
-vnoremap <silent> J :m '>+1<CR>gv=gv
-vnoremap <silent> K :m -2<CR>gv=gv
+nnoremap <silent> <A-j> :m +1<CR>
+nnoremap <silent> <A-k> :m -2<CR>
+vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
+vnoremap <silent> <A-k> :m -2<CR>gv=gv
+" Adjust split sizes easier
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize -3<CR>
+noremap <silent> <C-Down> :resize +3<CR>
 " --- BASIC KEYMAP END ---
 
 " --- SPECIFY FILE CONFIG ---
