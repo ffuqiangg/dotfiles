@@ -66,14 +66,21 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+" Switch window
 nnoremap <C-h> <C-w>h<CR>
 nnoremap <C-j> <C-w>j<CR>
 nnoremap <C-k> <C-w>k<CR>
 nnoremap <C-l> <C-w>l<CR>
 nnoremap H gT
+" Switch tab
 nnoremap L gt
 nnoremap T H
 nnoremap B L
+" Move line
+nnoremap <silent> J :m +1<CR>
+nnoremap <silent> K :m -2<CR>
+vnoremap <silent> J :m '>+1<CR>gv=gv
+vnoremap <silent> K :m -2<CR>gv=gv
 " --- BASIC KEYMAP END ---
 
 " --- SPECIFY FILE CONFIG ---
