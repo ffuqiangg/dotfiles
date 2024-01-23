@@ -119,7 +119,7 @@ autocmd! FileType fzf set laststatus=0 noshowmode noruler
 let g:fzf_buffers_jump = 1
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 let g:fzf_tags_command = 'ctags -R'
-let $FZF_DEFAULT_OPTS = '--inline-info'
+let $FZF_DEFAULT_OPTS = '--inline-info --reverse'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -g '!**/.git/**' -- ".<q-args>, 1, <bang>0)
 let g:fzf_vim = {}
