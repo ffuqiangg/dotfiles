@@ -8,9 +8,9 @@ return {
           preview_width = 0.49,
         },
         width = 0.9,
-        preview_cutoff = 100,
-      },
-      sorting_strategy = "ascending",
-    },
-  },
+        preview_cutoff = 100
+      }
+      sorting_strategy = "ascending"
+    }
+  }
 }
