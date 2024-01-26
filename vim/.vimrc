@@ -72,7 +72,7 @@ nnoremap <C-j> <C-w>j<CR>
 nnoremap <C-k> <C-w>k<CR>
 nnoremap <C-l> <C-w>l<CR>
 nnoremap <silent> <C-q> :q<CR>
-nnoremap <silent> <C-w> :w<CR>
+nnoremap <silent> <C-s> :w<CR>
 nnoremap <silent> <C-x> :x<CR>
 " Switch tab
 nnoremap H gT
