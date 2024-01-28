@@ -40,7 +40,7 @@ set fillchars=vert:│                " change vertsplite character
 set ttimeoutlen=100                 " set <esc> response time
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
-"set cursorline                     " highlight current line
+set cursorline                      " highlight current line
 set laststatus=2                    " always show statusline
 "set noshowmode                     " don't show mode in command line(already show in statusline)
 set scrolloff=2                     " keep <n> lines when scrolling
@@ -71,8 +71,6 @@ nnoremap <C-h> <C-w>h<CR>
 nnoremap <C-j> <C-w>j<CR>
 nnoremap <C-k> <C-w>k<CR>
 nnoremap <C-l> <C-w>l<CR>
-nnoremap <silent> <C-q> :q<CR>
-nnoremap <silent> <C-s> :w<CR>
 " Switch tab
 nnoremap H gT
 nnoremap L gt
