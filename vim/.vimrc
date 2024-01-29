@@ -13,7 +13,6 @@ endif
 " --- VIM PLUGINS SETTINGS ---
 call plug#begin()
 Plug 'joshdick/onedark.vim'
-Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTree', 'NERDTreeFind'] }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
@@ -112,7 +111,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>g :GFiles<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <Leader>h :Helptags<CR>
+nnoremap <silent> <Leader>h :History<CR>
 let g:fzf_layout = { 'down': '40%' }
 autocmd! FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
