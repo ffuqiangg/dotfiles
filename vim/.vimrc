@@ -130,10 +130,4 @@ set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
-let g:startify_custom_header = [
-    \'    ______  ____  ____    __  _____  ____    ______  __    _ ____  ____    __',
-    \'   |   ___||    ||    \  /  ||     ||    |  |   ___|\  \  //|    ||    \  /  |',
-    \'    `-.`-. |    ||     \/   ||    _||    |_ |   ___| \  \// |    ||     \/   |',
-    \'   |______||____||__/\__/|__||___|  |______||______|  \__/  |____||__/\__/|__|',
-    \]
 " --- INTERFACE CONFIGURE END ---

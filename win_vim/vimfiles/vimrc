@@ -128,10 +128,4 @@ colorscheme onedark
 "    \ }
 "nmap L <Plug>lightline#bufferline#go_next()
 "nmap H <Plug>lightline#bufferline#go_previous()
-let g:startify_custom_header = [
-    \'    ______  ____  ____    __  _____  ____    ______  __    _ ____  ____    __',
-    \'   |   ___||    ||    \  /  ||     ||    |  |   ___|\  \  //|    ||    \  /  |',
-    \'    `-.`-. |    ||     \/   ||    _||    |_ |   ___| \  \// |    ||     \/   |',
-    \'   |______||____||__/\__/|__||___|  |______||______|  \__/  |____||__/\__/|__|',
-    \]
 " --- INTERFACE CONFIGURE END ---
