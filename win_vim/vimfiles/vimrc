@@ -9,7 +9,6 @@ let mapleader="\<Space>"
 " --- VIM PLUGINS CONFIGURE ---
 call plug#begin()
 Plug 'joshdick/onedark.vim'
-Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTree', 'NERDTreeFind']  }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
@@ -97,7 +96,7 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>g :GFiles<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <Leader>h :Helptags<CR>
+nnoremap <silent> <Leader>h :History<CR>
 let g:fzf_vim = {}
 let g:fzf_vim.preview_window = []
 let g:fzf_layout = { 'down': '40%' }
