@@ -96,6 +96,7 @@ nnoremap <silent> <leader>e :Ex<CR>
 "filetype plugin indent on
 "autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 "autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype markdown set wrap
 " --- SPECIFY FILE CONFIG END ---
 
 " --- COC CONFIG ---

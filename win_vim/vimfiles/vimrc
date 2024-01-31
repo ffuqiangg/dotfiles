@@ -54,6 +54,7 @@ set shiftwidth=4                    " number of spaces to use for (auto)indent
 filetype plugin indent on
 autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype markdown set wrap
 " --- BASIC CONFIGURE END ---
 
 " --- BASIC KEYMAP ---
