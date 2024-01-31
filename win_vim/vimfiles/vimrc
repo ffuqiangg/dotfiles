@@ -9,7 +9,6 @@ let mapleader="\<Space>"
 " --- VIM PLUGINS CONFIGURE ---
 call plug#begin()
 Plug 'joshdick/onedark.vim'
-Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTree', 'NERDTreeFind']  }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
@@ -82,15 +81,13 @@ noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize -3<CR>
 noremap <silent> <C-Down> :resize +3<CR>
+" File save
+nnoremap <silent> <leader>q :q<CR>
+nnoremap <silent> <leader>w :w<CR>
+nnoremap <silent> <leader>x :wq<CR>
+" Filetree
+nnoremap <silent> <leader>e :Ex<CR>
 " --- BASIC KEYMAP END ---
-
-" --- NERDTREE CONFIGURE ---
-nnoremap <silent> <leader>e :NERDTreeFocus<CR>
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" --- NERDTREE CONFIGURE END ---
 
 " --- FZF CONFIGURE ---
 nnoremap <silent> <Leader>f :Files<CR>
@@ -117,15 +114,4 @@ set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
-"set showtabline=2
-"let g:lightline = {
-"    \ 'colorscheme': 'onedark',
-"    \ 'separator': { 'left': '', 'right': ''  },
-"    \ 'subseparator': { 'left': '', 'right': ''  },
-"    \ 'tabline': {'left': [['buffer']], 'right': [['close']]},
-"    \ 'component_expand': {'buffer': 'lightline#bufferline#buffers'},
-"    \ 'component_type': {'buffer': 'tabsel'}
-"    \ }
-"nmap L <Plug>lightline#bufferline#go_next()
-"nmap H <Plug>lightline#bufferline#go_previous()
 " --- INTERFACE CONFIGURE END ---

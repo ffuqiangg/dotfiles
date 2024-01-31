@@ -13,7 +13,6 @@ endif
 " --- VIM PLUGINS SETTINGS ---
 call plug#begin()
 Plug 'joshdick/onedark.vim'
-Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFocus', 'NERDTree', 'NERDTreeFind'] }
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
@@ -85,6 +84,12 @@ noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize -3<CR>
 noremap <silent> <C-Down> :resize +3<CR>
+" File save
+nnoremap <silent> <leader>q :q<CR>
+nnoremap <silent> <leader>w :w<CR>
+nnoremap <silent> <leader>x :wq<CR>
+" Filetree
+nnoremap <silent> <leader>e :Ex<CR>
 " --- BASIC KEYMAP END ---
 
 " --- SPECIFY FILE CONFIG ---
@@ -92,14 +97,6 @@ noremap <silent> <C-Down> :resize +3<CR>
 "autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
 "autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
 " --- SPECIFY FILE CONFIG END ---
-
-" ---  NERDTREE CONFIGURE ---
-nnoremap <silent> <leader>e :NERDTreeFocus<CR>
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" ---  NERDTREE CONFIGURE END ---
 
 " --- COC CONFIG ---
 let g:coc_global_extensions = ['coc-marketplace', 'coc-sh', 'coc-snippets', 'coc-yaml']
