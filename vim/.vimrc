@@ -95,8 +95,8 @@ nnoremap <silent> <leader>e :Ex<CR>
 
 " --- SPECIFY FILE CONFIG ---
 "filetype plugin indent on
-"autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
-"autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype markdown set wrap
 " --- SPECIFY FILE CONFIG END ---
 
@@ -116,11 +116,8 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 autocmd! FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 let g:fzf_buffers_jump = 1
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-let g:fzf_tags_command = 'ctags -R'
 let $FZF_DEFAULT_OPTS = '--inline-info --reverse'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -g '!**/.git/**' -- ".<q-args>, 1, <bang>0)
 let g:fzf_vim = {}
 let g:fzf_vim.preview_window = []
 " --- FZF CONFIG END ---
