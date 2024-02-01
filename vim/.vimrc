@@ -127,4 +127,6 @@ set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
+hi StatusLine guifg=white guibg=#61AFEF
+hi StatusLineNC guifg=#ABB2BF guibg=#2C323C
 " --- INTERFACE CONFIGURE END ---
