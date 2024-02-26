@@ -46,4 +46,4 @@ function make-link ($target, $link) {
     New-Item -Path $link -ItemType SymbolicLink -Value $target
 }
 
-Invoke-Expression (&starship init powershell)
+#Invoke-Expression (&starship init powershell)
