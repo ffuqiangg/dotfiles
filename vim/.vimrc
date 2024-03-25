@@ -84,6 +84,8 @@ noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize -3<CR>
 noremap <silent> <C-Down> :resize +3<CR>
+" Cancel Search Hilight
+nnoremap <Esc> :noh<CR>
 " Filetree
 let g:netrw_banner=0
 nnoremap <silent> <leader>e :Ex<CR>
