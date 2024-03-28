@@ -88,7 +88,7 @@ noremap <silent> <C-Down> :resize +3<CR>
 nnoremap <Esc> :noh<CR>
 " Filetree
 let g:netrw_banner=0
-nnoremap <silent> <leader>e :Ex<CR>
+nnoremap <silent> <leader>e :E<CR>
 " --- BASIC KEYMAP END ---
 
 " --- SPECIFY FILE CONFIG ---
