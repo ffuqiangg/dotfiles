@@ -354,9 +354,12 @@ require('lazy').setup({
                 --  All the info you're looking for is in `:help telescope.setup()`
                 --
                 -- defaults = {
-                --   mappings = {
-                --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+                --   layout_config = {
+                --     horizontal = {
+                --       prompt_position = 'top',
+                --     },
                 --   },
+                --   sorting_strategy = 'ascending',
                 -- },
                 -- pickers = {}
                 extensions = {
