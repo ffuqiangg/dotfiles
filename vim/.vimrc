@@ -66,10 +66,11 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 " Switch window
-nnoremap <C-h> <C-w>h<CR>
-nnoremap <C-j> <C-w>j<CR>
-nnoremap <C-k> <C-w>k<CR>
-nnoremap <C-l> <C-w>l<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <Leader>wc <C-w>c
 " Switch tab
 nnoremap H gT
 nnoremap L gt
