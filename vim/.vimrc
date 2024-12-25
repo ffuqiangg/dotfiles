@@ -113,15 +113,15 @@ nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>g :GFiles<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
 nnoremap <silent> <Leader>h :History<CR>
-let g:fzf_layout = { 'down': '40%' }
-let g:fzf_layout = { 'down': '40%' }
+"let g:fzf_layout = { 'down': '40%' }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 autocmd! FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 let g:fzf_buffers_jump = 1
 let $FZF_DEFAULT_OPTS = '--inline-info --reverse'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
 let g:fzf_vim = {}
-let g:fzf_vim.preview_window = []
+"let g:fzf_vim.preview_window = []
 " --- FZF CONFIG END ---
 
 " --- INTERFACE CONFIGURE ---
