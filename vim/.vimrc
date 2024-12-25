@@ -121,7 +121,7 @@ let g:fzf_buffers_jump = 1
 let $FZF_DEFAULT_OPTS = '--inline-info --reverse'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
 let g:fzf_vim = {}
-"let g:fzf_vim.preview_window = []
+let g:fzf_vim.preview_window = ['right,43%', 'ctrl-/']
 " --- FZF CONFIG END ---
 
 " --- INTERFACE CONFIGURE ---
