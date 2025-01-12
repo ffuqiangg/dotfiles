@@ -97,8 +97,9 @@ nnoremap <silent> <leader>e :E<CR>
 
 " --- SPECIFY FILE CONFIG ---
 "filetype plugin indent on
-autocmd Filetype yaml set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype lua set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype yaml set ts=2 sw=2 sts=2
+autocmd Filetype lua set ts=2 sw=2 sts=2
+autocmd Filetype json set ts=2 sw=2 sts=2
 autocmd Filetype markdown set wrap
 " --- SPECIFY FILE CONFIG END ---
 
