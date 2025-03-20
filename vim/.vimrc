@@ -76,11 +76,6 @@ nnoremap H gT
 nnoremap L gt
 nnoremap T H
 nnoremap B L
-" Move line
-nnoremap <silent> <C-n> :m +1<CR>
-nnoremap <silent> <C-p> :m -2<CR>
-vnoremap <silent> <C-n> :m '>+1<CR>gv=gv
-vnoremap <silent> <C-p> :m -2<CR>gv=gv
 " Adjust split sizes easier
 noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
@@ -96,28 +91,18 @@ nnoremap <silent> <leader>e :E<CR>
 " --- BASIC KEYMAP END ---
 
 " --- SPECIFY FILE CONFIG ---
-"filetype plugin indent on
 autocmd Filetype yaml set ts=2 sw=2 sts=2
 autocmd Filetype lua set ts=2 sw=2 sts=2
 autocmd Filetype json set ts=2 sw=2 sts=2
 autocmd Filetype markdown set wrap
 " --- SPECIFY FILE CONFIG END ---
 
-" --- COC CONFIG ---
-"let g:coc_global_extensions = ['coc-marketplace', 'coc-sh', 'coc-snippets', 'coc-yaml']
-"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-"                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-" --- COC COFIG END ---
-
 " --- FZF CONFIG ---
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>g :GFiles<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
 nnoremap <silent> <Leader>h :History<CR>
-"let g:fzf_layout = { 'down': '40%' }
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
-autocmd! FileType fzf set laststatus=0 noshowmode noruler
-    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 let g:fzf_buffers_jump = 1
 let $FZF_DEFAULT_OPTS = '--inline-info --reverse'
 let g:fzf_vim = {}
