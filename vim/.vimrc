@@ -94,7 +94,6 @@ nnoremap <silent> <leader>e :E<CR>
 autocmd Filetype yaml set ts=2 sw=2 sts=2
 autocmd Filetype lua set ts=2 sw=2 sts=2
 autocmd Filetype json set ts=2 sw=2 sts=2
-autocmd Filetype markdown set wrap
 " --- SPECIFY FILE CONFIG END ---
 
 " --- FZF CONFIG ---
