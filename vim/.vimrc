@@ -12,7 +12,7 @@ endif
 
 " --- VIM PLUGINS SETTINGS ---
 call plug#begin()
-Plug 'nanotech/jellybeans.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -109,12 +109,6 @@ let g:fzf_vim.preview_window = ['right,43%', 'ctrl-/']
 " --- INTERFACE CONFIGURE ---
 set termguicolors
 set background=dark
-let g:jellybeans_overrides = {
-\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
-\}
-if has('termguicolors') && &termguicolors
-    let g:jellybeans_overrides['background']['guibg'] = 'none'
-endif
-let g:jellybeans_use_term_italics = 1
-colorscheme jellybeans
+let g:onedark_terminal_italics=1
+colorscheme onedark
 " --- INTERFACE CONFIGURE END ---
