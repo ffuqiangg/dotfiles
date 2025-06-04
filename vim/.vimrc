@@ -58,6 +58,18 @@ set shiftround                      " indent not to multiple of 'shiftwidth'
 set shiftwidth=4                    " number of spaces to use for (auto)indent
 " --- BASIC SETTINGS END ---
 
+" --- SWAP FILE ---
+set swapfile                        "enable swap file
+set directory=~/.vim/swap//         "set swp file directory.
+" Create folder if not exists
+if !isdirectory(&directory)
+    silent! call mkdir(&directory, 'p')
+endif
+set updatecount=20                  "save swp file every amount of characters
+" ▼ update also check cursor-holds and other functions, bit expensive one.
+set updatetime=4000                 "save swap file every amount of ms
+" --- SWAP FILE END ---
+
 " --- BASIC KEYMAP ---
 nnoremap k gk
 nnoremap gk k
@@ -103,7 +115,7 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 let g:fzf_buffers_jump = 1
 let $FZF_DEFAULT_OPTS = '--inline-info --reverse'
 let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['right,43%', 'ctrl-/']
+let g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
 " --- FZF CONFIG END ---
 
 " --- INTERFACE CONFIGURE ---
