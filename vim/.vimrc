@@ -75,6 +75,12 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+inoremap <C-j> <C-o>o
+inoremap <C-k> <C-o>O
+inoremap n <Down>
+inoremap p <Up>
+inoremap f <Right>
+inoremap b <Left>
 " Switch window
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -104,6 +110,7 @@ nnoremap <silent> <leader>e :E<CR>
 autocmd Filetype yaml set ts=2 sw=2 sts=2
 autocmd Filetype lua set ts=2 sw=2 sts=2
 autocmd Filetype json set ts=2 sw=2 sts=2
+autocmd BufRead,BufNewFile *.ut set ft=uc
 " --- SPECIFY FILE CONFIG END ---
 
 " --- FZF CONFIG ---
