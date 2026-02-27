@@ -98,7 +98,7 @@ noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize -3<CR>
 noremap <silent> <C-Down> :resize +3<CR>
 " Cancel Search Hilight
-nnoremap <Leader>q :noh<CR>
+nnoremap <Esc> :noh<CR>
 " Close buffer
 nnoremap <silent> <Leader>bd :bd<CR> 
 " Filetree
