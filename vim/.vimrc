@@ -98,7 +98,7 @@ noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize -3<CR>
 noremap <silent> <C-Down> :resize +3<CR>
 " Cancel Search Hilight
-nnoremap <Esc> :noh<CR>
+nnoremap <Leader>q :noh<CR>
 " Close buffer
 nnoremap <silent> <Leader>bd :bd<CR> 
 " Filetree
@@ -107,9 +107,8 @@ nnoremap <silent> <leader>e :E<CR>
 " --- BASIC KEYMAP END ---
 
 " --- SPECIFY FILE CONFIG ---
-autocmd Filetype yaml set ts=2 sw=2 sts=2
-autocmd Filetype lua set ts=2 sw=2 sts=2
-autocmd Filetype json set ts=2 sw=2 sts=2
+autocmd Filetype yaml,lua,json set ts=2 sw=2 sts=2
+autocmd Filetype markdown set ts=2 sw=2 sts=2 wrap
 autocmd BufRead,BufNewFile *.ut set ft=uc
 " --- SPECIFY FILE CONFIG END ---
 
