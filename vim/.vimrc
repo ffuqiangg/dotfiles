@@ -13,6 +13,7 @@ endif
 " --- VIM PLUGINS SETTINGS ---
 call plug#begin()
 Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -129,4 +130,5 @@ set termguicolors
 set background=dark
 let g:onedark_terminal_italics=1
 colorscheme onedark
+let g:lightline = { 'colorscheme': 'wombat' }
 " --- INTERFACE CONFIGURE END ---
