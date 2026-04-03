@@ -76,32 +76,18 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
-inoremap <C-j> <C-o>o
-inoremap <C-k> <C-o>O
-inoremap n <Down>
-inoremap p <Up>
-inoremap f <Right>
-inoremap b <Left>
 " Switch window
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <Leader>wc <C-w>c
 " Switch tab
 nnoremap H gT
 nnoremap L gt
 nnoremap T H
 nnoremap B L
-" Adjust split sizes easier
-noremap <silent> <C-Left> :vertical resize +3<CR>
-noremap <silent> <C-Right> :vertical resize -3<CR>
-noremap <silent> <C-Up> :resize -3<CR>
-noremap <silent> <C-Down> :resize +3<CR>
 " Cancel Search Hilight
 nnoremap <Esc> :noh<CR>
-" Close buffer
-nnoremap <silent> <Leader>bd :bd<CR> 
 " Filetree
 let g:netrw_banner=0
 nnoremap <silent> <leader>e :E<CR>
