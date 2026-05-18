@@ -2,27 +2,7 @@
 let mapleader="\<Space>"
 " --- SET MAPLEADER END ---
 
-" --- AUTO INSTALL VIM-PLUG -------
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-" --- AUTO INSTALL VIM-PLUG END ---
-
-" --- VIM PLUGINS SETTINGS ---
-call plug#begin()
-Plug 'joshdick/onedark.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-call plug#end()
-" --- VIM PLUGINS SETTINGS END ---
-
 " --- BASIC SETTINGS ---
-set mouse=a                         " turn mouse support on
 syntax on                           " turn syntax highlighting on by default
 set nocompatible                    " use vim defaults
 set showcmd                         " display incomplete commands
@@ -39,7 +19,7 @@ set ttimeoutlen=100                 " set <esc> response time
 set nowrap                          " line exceed screen don't wrap
 set sidescroll=1                    " line exceed screen cursor smooth scrolling
 set cursorline                      " highlight current line
-set laststatus=2                    " always show statusline
+set laststatus=1                    " always show statusline
 "set noshowmode                     " don't show mode in command line(already show in statusline)
 set scrolloff=2                     " keep <n> lines when scrolling
 set numberwidth=5                   " line number width configure
@@ -57,6 +37,7 @@ set expandtab                       " expand <Tab> as spaces
 set softtabstop=4                   " spaces number when insert <Tab>
 set shiftround                      " indent not to multiple of 'shiftwidth'
 set shiftwidth=4                    " number of spaces to use for (auto)indent
+set path+=**                        " find dir
 " --- BASIC SETTINGS END ---
 
 " --- SWAP FILE ---
@@ -98,18 +79,6 @@ autocmd Filetype yaml,lua,json set ts=2 sw=2 sts=2
 autocmd Filetype markdown set ts=2 sw=2 sts=2 wrap
 autocmd BufRead,BufNewFile *.ut set ft=uc
 " --- SPECIFY FILE CONFIG END ---
-
-" --- FZF CONFIG ---
-nnoremap <silent> <Leader>f :Files<CR>
-nnoremap <silent> <Leader>g :GFiles<CR>
-nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <Leader>h :History<CR>
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
-let g:fzf_buffers_jump = 1
-let $FZF_DEFAULT_OPTS = '--inline-info --reverse'
-let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
-" --- FZF CONFIG END ---
 
 " --- INTERFACE CONFIGURE ---
 set termguicolors
