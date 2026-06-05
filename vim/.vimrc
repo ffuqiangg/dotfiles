@@ -1,3 +1,12 @@
+"
+" --- colorscheme & plugin ---
+" https://github.com/joshdick/onedark.vim/raw/refs/heads/main/colors/onedark.vim -> ~/.vim/colors/
+" https://github.com/joshdick/onedark.vim/raw/refs/heads/main/autoload/onedark.vim -> ~/.vim/autoload/
+" https://github.com/tpope/vim-surround/raw/refs/heads/master/plugin/surround.vim -> ~/.vim/plugin/
+" https://github.com/jiangmiao/auto-pairs/raw/refs/heads/master/plugin/auto-pairs.vim -> ~/.vim/plugin/
+" --- colorscheme & plugin end ---
+"
+
 " --- SET MAPLEADER ---
 let mapleader="\<Space>"
 " --- SET MAPLEADER END ---
